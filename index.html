@@ -11,20 +11,33 @@
     }
 
     .banner {
-      background: linear-gradient(120deg, #1f3c88, #4a69bd);
+      background-image: url("Banner.jfif");
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
+      position: relative;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
     }
 
     .banner h1 {
       margin: 10px 0;
       font-size: 40px;
-    }
-
-    .banner h3 {
-      font-weight: normal;
-      opacity: 0.9;
     }
 
     .profile-img {
@@ -33,6 +46,7 @@
       border-radius: 50%;
       border: 4px solid white;
       margin-top: 20px;
+      object-fit: cover;
     }
 
     .container {
@@ -85,16 +99,17 @@
 
 <body>
 
-<!-- 🔷 Banner Section -->
+<!-- Banner -->
 <div class="banner">
-  <img src="profile.jpg" class="profile-img">
-  <h1>Sameer Kokate</h1>
-  <h3>Senior Business Consultant | AI-Driven Manufacturing | ERP Transformation</h3>
+  <div class="banner-content">
+    <img src="Profile photo.jfif" class="profile-img">
+    <h1>Sameer Kokate</h1>
+    <h3>Senior Business Consultant | AI-Driven Manufacturing | ERP Transformation</h3>
+  </div>
 </div>
 
 <div class="container fade-in">
 
-  <!-- About -->
   <div class="card">
     <p>
       Senior Business Consultant with 8+ years of experience delivering ERP implementations 
@@ -102,7 +117,6 @@
     </p>
   </div>
 
-  <!-- What I Do -->
   <h2>What I Do</h2>
   <div class="card">
     <ul>
@@ -113,13 +127,11 @@
     </ul>
   </div>
 
-  <!-- Case Study -->
   <h2>Featured Case Study</h2>
   <div class="card">
     <h3>Automated Custom Tariff Classification using AI</h3>
     <p>
-      Reduced manual effort by 70% by integrating AI with ERP to automate tariff classification 
-      using material descriptions and intelligent prompts.
+      Reduced manual effort by 70% by integrating AI with ERP to automate tariff classification.
     </p>
     <p>
       👉 <a href="https://github.com/sameer-kokate/erp-ai-case-studies" target="_blank">
@@ -128,17 +140,6 @@
     </p>
   </div>
 
-  <!-- Key Work -->
-  <h2>Key Work</h2>
-  <div class="card">
-    <ul>
-      <li>ERP AI Automation Use Cases</li>
-      <li>ERP Implementation Playbook</li>
-      <li>AI + ERP Architecture</li>
-    </ul>
-  </div>
-
-  <!-- Contact -->
   <h2>Contact</h2>
   <div class="card">
     <p>
