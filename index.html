@@ -5,31 +5,34 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(to right, #eef2f7, #f9fbfd);
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f7;
+      overflow: hidden;
     }
 
-    /* 🔷 Banner Section */
+    /* 🔷 Banner */
     .banner {
       background-image: url("banner.jpg");
       background-size: cover;
       background-position: center;
+      height: 180px;
       color: white;
-      padding: 80px 20px;
       text-align: center;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    /* Overlay */
     .banner::after {
       content: "";
       position: absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background: rgba(0,0,0,0.5);
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      top: 0;
+      left: 0;
     }
 
     .banner-content {
@@ -37,56 +40,55 @@
       z-index: 2;
     }
 
-    .banner h1 {
-      margin: 10px 0;
-      font-size: 42px;
-    }
-
-    .banner h3 {
-      font-weight: normal;
-      opacity: 0.9;
-    }
-
-    /* Profile Image */
     .profile-img {
-      width: 130px;
-      height: 130px;
+      width: 75px;
+      height: 75px;
       border-radius: 50%;
-      border: 4px solid white;
-      margin-top: 20px;
-      object-fit: cover;
+      border: 2px solid white;
     }
 
-    /* Container */
+    h1 {
+      margin: 5px 0;
+      font-size: 22px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: normal;
+    }
+
+    /* 🔷 Dashboard Layout */
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 12px;
+      height: calc(100vh - 180px);
     }
 
-    h2 {
-      margin-top: 40px;
-      color: #1f3c88;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
-
-    /* Cards */
     .card {
       background: white;
-      padding: 20px;
-      margin-top: 20px;
+      padding: 12px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      font-size: 12px;
+      transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
     }
 
+    h2 {
+      font-size: 14px;
+      margin: 0 0 6px;
+      color: #1f3c88;
+    }
+
     ul {
-      line-height: 1.8;
+      margin: 0;
+      padding-left: 15px;
     }
 
     a {
@@ -95,14 +97,17 @@
       font-weight: bold;
     }
 
-    /* Animation */
-    .fade-in {
-      animation: fadeIn 1.2s ease-in;
+    /* 🔷 KPI Section */
+    .kpi {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #1f3c88;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+    .kpi-label {
+      font-size: 11px;
+      color: #555;
     }
 
   </style>
@@ -110,68 +115,76 @@
 
 <body>
 
-<!-- 🔷 Banner -->
+<!-- Banner -->
 <div class="banner">
   <div class="banner-content">
     <img src="profile.jpg" class="profile-img">
     <h1>Sameer Kokate</h1>
-    <h3>Senior Business Consultant | AI-Driven Manufacturing | ERP Transformation</h3>
+    <h3>Senior Business Consultant | AI | ERP Transformation</h3>
   </div>
 </div>
 
-<div class="container fade-in">
+<!-- Dashboard -->
+<div class="container">
+
+  <!-- KPIs -->
+  <div class="card">
+    <div class="kpi">8+</div>
+    <div class="kpi-label">Years Experience</div>
+  </div>
+
+  <div class="card">
+    <div class="kpi">10+</div>
+    <div class="kpi-label">ERP Implementations</div>
+  </div>
+
+  <div class="card">
+    <div class="kpi">30%</div>
+    <div class="kpi-label">Efficiency Improvement</div>
+  </div>
 
   <!-- About -->
   <div class="card">
-    <p>
-      Senior Business Consultant with 8+ years of experience delivering ERP implementations 
-      and AI-driven automation solutions for manufacturing organizations across India and Malaysia.
-    </p>
+    <h2>About</h2>
+    ERP & AI consultant delivering automation solutions for manufacturing across India & Malaysia.
   </div>
 
   <!-- What I Do -->
-  <h2>What I Do</h2>
   <div class="card">
+    <h2>What I Do</h2>
     <ul>
-      <li>ERP Implementation (abas ERP)</li>
-      <li>AI-Powered Automation</li>
-      <li>MRP & Production Planning</li>
-      <li>Business Process Transformation</li>
+      <li>ERP Implementation</li>
+      <li>AI Automation</li>
+      <li>MRP Planning</li>
+      <li>Process Transformation</li>
     </ul>
   </div>
 
   <!-- Case Study -->
-  <h2>Featured Case Study</h2>
   <div class="card">
-    <h3>Automated Custom Tariff Classification using AI</h3>
-    <p>
-      Reduced manual effort by 70% by integrating AI with ERP to automate tariff classification 
-      using material descriptions and intelligent prompts.
-    </p>
-    <p>
-      👉 <a href="https://github.com/sameer-kokate/erp-ai-case-studies" target="_blank">
-        View Full Case Study
-      </a>
-    </p>
+    <h2>Case Study</h2>
+    AI-based tariff classification automation reducing manual effort by 70%.
+    <br><br>
+    <a href="https://github.com/sameer-kokate/erp-ai-case-studies" target="_blank">
+      View →
+    </a>
   </div>
 
   <!-- Key Work -->
-  <h2>Key Work</h2>
   <div class="card">
+    <h2>Key Work</h2>
     <ul>
-      <li>ERP AI Automation Use Cases</li>
-      <li>ERP Implementation Playbook</li>
+      <li>ERP AI Use Cases</li>
+      <li>Implementation Playbook</li>
       <li>AI + ERP Architecture</li>
     </ul>
   </div>
 
   <!-- Contact -->
-  <h2>Contact</h2>
   <div class="card">
-    <p>
-      🔗 <a href="https://linkedin.com/in/sameer-kokate">LinkedIn</a><br>
-      🔗 <a href="https://github.com/sameer-kokate">GitHub Portfolio</a>
-    </p>
+    <h2>Contact</h2>
+    <a href="https://linkedin.com/in/sameer-kokate">LinkedIn</a><br>
+    <a href="https://github.com/sameer-kokate">GitHub</a>
   </div>
 
 </div>
