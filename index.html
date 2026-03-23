@@ -20,7 +20,7 @@
     }
 
     .banner {
-      height: 150px;
+      height: 170px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -28,35 +28,37 @@
     }
 
     .profile-img {
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       border: 2px solid white;
     }
 
     h1 {
       margin: 5px 0;
-      font-size: 20px;
+      font-size: 28px; /* 🔥 Bigger name */
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     h3 {
       margin: 0;
-      font-size: 12px;
+      font-size: 13px;
       opacity: 0.8;
     }
 
     .container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      gap: 12px;
       padding: 10px;
-      height: calc(100vh - 150px);
+      height: calc(100vh - 170px);
     }
 
     .card {
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(10px);
-      padding: 10px;
+      padding: 12px;
       border-radius: 10px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.4);
       font-size: 12px;
@@ -159,16 +161,6 @@
     </ul>
   </div>
 
-  <!-- Pricing -->
-  <div class="card">
-    <h2>💰 Services Pricing</h2>
-    <ul>
-      <li>ERP Consulting: ₹2,500/hr</li>
-      <li>AI Automation: ₹3,500/hr</li>
-      <li>Project Implementation: Custom</li>
-    </ul>
-  </div>
-
   <!-- Case Study -->
   <div class="card">
     <h2>📊 Case Study</h2>
@@ -177,20 +169,27 @@
     <a href="https://github.com/sameer-kokate/erp-ai-case-studies" target="_blank">View →</a>
   </div>
 
-  <!-- CTA -->
+  <!-- Hire Me -->
   <div class="card">
     <h2>🚀 Hire Me</h2>
     Available for ERP & AI consulting projects.
     <br>
-    <a href="mailto:sameerkokate.erp@gmail.com" class="btn">Contact Me</a>
+    <a href="mailto:sameerkokate1993@gmail.com" class="btn">Contact Me</a>
   </div>
 
-  <!-- CV -->
+  <!-- CV Download -->
   <div class="card">
     <h2>📄 Resume</h2>
     Download my professional CV.
     <br>
-    <a href="cv.pdf" class="btn">Download CV</a>
+
+    <!-- 🔥 IMPORTANT: DOWNLOAD LINK -->
+    <a href="Sameer Kokate 8 Yrs Senior ERP Consultant abas ERP AI Automation Discrete Manufacturing.pdf" 
+       download 
+       class="btn">
+       Download CV
+    </a>
+
   </div>
 
 </div>
